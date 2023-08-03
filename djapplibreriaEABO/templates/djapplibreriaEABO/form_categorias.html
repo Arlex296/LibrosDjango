@@ -1,0 +1,32 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+    {% block titulo  %}Formulario{% endblock titulo  %}
+    {% block cuerpo  %}
+    {% load static %}
+
+    <br><br><br><br>
+      <h2>Formulario Categorias</h2>
+    
+      
+    <form action="{% url 'procesar_categoria' %}" method="POST" enctype="multipart/form-data">
+      
+        {% csrf_token%}
+         
+       
+        <br><input type="text" name=" categoria" id="" Required placeholder="categoria"><br>
+        <br><input type="text" name="estado" id="" Required placeholder="Estado"><br>
+       
+        
+     
+        <div class="wrap">
+          <button class="button">ENVIAR</button>
+        </div>
+
+
+    </form>
+    
+
+    <script type="text/javascript" src="../static/djapplibreriaEABO//js/prueba.js"></script>
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+    {% endblock cuerpo  %}
+
+    

@@ -1,0 +1,219 @@
+table {
+    margin: 0 auto;     
+    width: 50%;
+    height: 300px;
+    text-align: left;    
+    background-color: rgb(240, 238, 166);
+    align-items: center;
+    border: 1px solid rgb(5, 2, 2);
+ }
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+    text-align: center;
+ }
+ caption {
+    padding: 0.3em;
+    color: rgb(231, 207, 73);
+     background: #000;
+ }
+ th {
+    background: rgb(192, 177, 47);
+    color: #8b5402;
+ }
+
+ h2 {
+    text-align: center;
+    color: #f3c683;
+ }
+
+ body{
+    background-image: url('../imagenes/fondo1.jpg');
+    background-size: cover;
+ }
+
+
+
+
+ 
+form {
+    width:300px;
+     padding:20px;
+     border-radius:20px;
+     margin: auto;
+    margin-top: 100px;
+    background-color: #ffdec7cb;
+    text-align: center;
+    
+ } 
+ 
+ button{
+    background-color: rgb(252, 230, 170);
+    margin: 16px;
+    width: 90%;
+    border: none ;
+    padding: 12px;
+   
+ }
+ 
+ input{
+ 
+    width: 90%;
+    background: rgb(241, 202, 72);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    border: 1px solid #ad2b0b36;
+    font-family: 'calibri';
+    font-size: 18px;
+ 
+ }
+ select{
+    width: 90%;
+    background: rgb(241, 202, 72);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    border: 1px solid #ad2b0b36;
+    font-family: 'calibri';
+    font-size: 18px;
+ }
+ 
+
+
+
+
+/* BOTONNNNNNNNNNNNNN  */
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 200px;
+  min-height: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #28a6aa;
+background: linear-gradient(90deg, rgb(35, 172, 153) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+
+
+
+/* menu deplegableeeeeeeeeeeeeeeeeeeee */
+
+
+
+.menuCSS3 ul {
+  display: flex;
+  padding: 20;
+  margin: 20;
+  list-style: none;
+  position: relative;
+  top: 50px; left: 0px;
+}
+.menuCSS3 a {
+  display: block;
+  padding: 2em;
+  background-color: rgb(243, 186, 139);
+  text-decoration: none;
+  color: #191C26;
+}
+.menuCSS3 a:hover {
+  background-color: #CC673B;
+}
+.menuCSS3 ul li ul {
+  display: none;
+}
+.menuCSS3 ul li a:hover + ul, .menuCSS3 ul li ul:hover {
+  display: block;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 23cm;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(243, 186, 139);
+  color: #8b5402;
+  z-index: 10;
+}

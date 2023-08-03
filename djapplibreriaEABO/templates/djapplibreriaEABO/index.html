@@ -1,0 +1,77 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Mostrar fomularios{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static  %}
+
+
+  {% comment %} <br><br><br><br><br><div class="titulos">
+    <h2> SESSION INICIADA</h2>
+    <a href=<img src="" alt="Cerrar Sesión" width="24"></a>
+
+    
+    <a class="Iniciar" href="" width="24">Iniciar Sesion</a>
+   
+
+
+</div>     {% endcomment %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-container mySwiper">
+         
+            <div class="swiper-wrapper">
+
+                {% for l in libros %} 
+                <div class="swiper-slide">
+                    <img src="{{MEDIA_URL}}/media/{{ l.portada }}"
+                        alt="">
+                <center>
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>{{ l.categoria.categoria }}</h4>
+                        </div>
+                       
+                        <div class="card-text">
+                           
+                            <p>{{ l.autores }}</p>
+                            
+                 
+                        </div>
+
+                        <div class="card-text">
+                           
+                            <p>${{ l.precio }}</p>
+                            
+                 
+                        </div>
+                         
+                        <div class="card-text">
+                            
+                             <p>{{ l.fecha_publicacion }}</p>
+                        </div>
+                    </div>
+                </center>
+
+                </div>
+
+                {% endfor %}  
+                 
+       
+            </div>
+         
+         
+
+        </div>
+
+    </div>
+
+    </div>
+
+</form>
+<link rel="stylesheet" href="{%static 'djapplibreriaEABO/css/style.css'%}">
+<link rel="stylesheet" href="{%static 'djapplibreriaEABO/css/carru.css'%}" />
+<script src="{%static 'djapplibreriaEABO/js/carru.js'%}"></script>
+<script src="{% static 'djapplibreriaEABO/js/carrusel.js' %}"></script>
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+{% endblock cuerpo  %}

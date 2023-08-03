@@ -1,0 +1,51 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}listado de  Clientes{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+<br><br><br>
+<h2>Datos Clientes</h2>
+<br><br>
+
+
+<table>
+        <thead>
+          
+            <th>Identificacion</th>
+            <th>Nombres</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Correo electronico</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+
+
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                
+                
+                <td>{{cliente.identificacion}}</td>
+                <td>{{cliente.nombres }}</td>
+                <td>{{cliente.apellido }}</td>
+                <td>{{cliente.telefono }}</td>
+                <td>{{cliente.direccion }}</td>
+                <td>{{cliente.correo_electronico }}</td>
+                <td>{{cliente.estado}}</td>
+                     
+                <td>
+                   
+                    <a href="{% url 'update_cliente' cliente.id_cliente %} "><img src="{% static 'djapplibreriaEABO/imagenes/editar.png' %}" width="24"></a>
+                    <a href="{% url 'eliminar_cliente' cliente.id_cliente %}"><img src="{% static 'djapplibreriaEABO/imagenes/eliminar.png' %}" width="24"></a>
+                </td>
+
+            </tr>
+            {% endfor%}
+        </tbody>        
+    </table>  
+
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}"> 
+    
+{% endblock cuerpo  %}

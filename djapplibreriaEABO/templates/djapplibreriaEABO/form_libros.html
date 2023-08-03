@@ -1,0 +1,42 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+    {% block titulo  %}Formulario{% endblock titulo  %}
+    {% block cuerpo  %}
+    {% load static %}
+    <br><br><br><br>
+ 
+      <h2>Formulario Libros</h2>
+    
+      
+    <form action="{% url 'procesar_libro' %}" method="POST" enctype="multipart/form-data">
+      
+        {% csrf_token%}
+         
+        <br><input type="number" name=" isbn"  Required placeholder="isbn"><br>
+        <br><input type="text" name=" titulo"  Required placeholder="titulo"><br>
+        <br><input type="date" name=" fecha_publicacion" id="" Required placeholder="fecha_publicacion"><br>
+        
+        
+
+             <select name="categoria">
+              <option value="0">Seleccione una categoria</option>
+              {% for cate in categorias%}
+              <option value="{{ cate.id_categoria }}">{{ cate.categoria }} </option>
+              {% endfor %}
+             </select>
+        
+        <br><input type="number" name="precio" Required placeholder="precio "><br>
+        <br><input type="file" name="portada" ><br>
+        <br><input type="number" name="cantidad_stock"  Required placeholder="cantidad_stock"><br>
+        <br><input type="text" name="estado"  Required placeholder="Estado"><br>
+
+     
+        <div class="wrap">
+          <button class="button">ENVIAR</button>
+        </div>
+
+
+    </form>
+
+    <script type="text/javascript" src="../static/djapplibreriaEABO//js/prueba.js"></script>
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+    {% endblock cuerpo  %}

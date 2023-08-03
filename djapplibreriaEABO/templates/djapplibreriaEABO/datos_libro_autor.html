@@ -1,0 +1,39 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}listado de  Clientes{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+<br><br><br>
+<h2>Datos Libros Autores</h2>
+
+
+
+<table>
+        <thead>
+            <th>Autor</th>
+            <th>ISBN</th>
+            <th>Estado</th>
+            
+
+
+        </thead>
+        <tbody>
+            {% for libroautor in librosautores %}
+            <tr>
+                
+                <td>{{libroautor.id_autor}}</td>
+                <td>{{libroautor.isbn}}</td>
+                <td>{{libroautor.estado}}</td>
+                
+                
+                     
+             
+
+            </tr>
+            {% endfor%}
+        </tbody>        
+    </table>  
+
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}"> 
+     
+{% endblock cuerpo  %}

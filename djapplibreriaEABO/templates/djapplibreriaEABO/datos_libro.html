@@ -1,0 +1,49 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}listado de  Libros{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+<br><br><br>
+<h2>Datos Libros</h2>
+
+<br>
+
+<table>
+        <thead>
+            <th>Isbn</th>
+            <th>Titulo</th>
+            <th>Fecha de publicacion</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th>Cantidad_stock</th>
+            <th>Estado</th>
+            <th>Portada</th>
+            <th>Acciones</th>
+
+        </thead>
+        <tbody>
+            {% for libro in libros %}
+            <tr>
+                
+                <td>{{libro.isbn}}</td>
+                <td>{{libro.titulo}}</td>
+                <td>{{libro.fecha_publicacion }}</td>
+                <td>{{libro.categoria.categoria}}</td>
+                <td>{{libro.precio }}</td>
+                <td>{{libro.cantidad_stock }}</td>
+                <td>{{libro.estado}}</td>
+                <td><img src="/media/{{ libro.portada }}" alt="imagen" width="50" style="border-radius: 30%"></td>
+                <td>
+                    
+                    <a href="{% url 'update_libros' libro.isbn %} "><img src="{% static 'djapplibreriaEABO/imagenes/editar.png' %}" width="24"></a>
+                    <a href="{% url 'eliminar_libro' libro.isbn %}"><img src="{% static 'djapplibreriaEABO/imagenes/eliminar.png' %}" width="24"></a>
+                </td>
+              
+
+            </tr>
+            {% endfor%}
+        </tbody>        
+    </table>  
+
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}"> 
+{% endblock cuerpo  %}

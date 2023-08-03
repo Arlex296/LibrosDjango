@@ -1,0 +1,30 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Formulario{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+  <h2>Formulario Clientes</h2>
+
+<form action="updaterecord_cliente/{{ cliente.id_cliente  }}" method="post">
+    {% csrf_token%}
+     
+    
+    
+    <br><input type="number" name="identificacion" id="" Required placeholder="identificacion" value="{{cliente.identificacion}}" ><br>
+    <br><input type="text" name="nombres" id="" Required placeholder="nombres" value="{{cliente.nombres}}" ><br>
+    <br><input type="text" name="apellido" id="" Required placeholder="apellido" value="{{cliente.apellido}}" ><br>
+    <br><input type="number" name="telefono" id="" Required placeholder="telefono" value="{{cliente.telefono}}" ><br>
+    <br><input type="text" name="direccion" id="" Required placeholder="direccion" value="{{cliente.direccion}}" ><br>
+    <br><input type="mail" name="correo_electronico" id="" Required placeholder="correo_electronico" value="{{cliente.correo_electronico}}" ><br>
+    <br><input type="text" name="estado" id="" Required placeholder="Estado" value="{{cliente.Estado}}" ><br>
+    
+
+    <div class="wrap">
+      <button class="button">ACTUALIZAR</button>
+    </div>
+
+
+<script type="text/javascript" src="../static/djapplibreriaEABO/js/no.js"></script>
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+{% endblock cuerpo  %}
+

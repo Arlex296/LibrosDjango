@@ -1,0 +1,31 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Formulario{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+  <h2>Editar Categorias</h2>
+
+
+
+    <form action="updaterecord_categorias/{{ cate.id_categoria}}" method="post">
+      {% csrf_token %} 
+      
+      <div class="div_grande">       
+          <h1>Formulario Categoria</h1>
+          <input type="text" name="categoria" required placeholder="ingrese Categoria" value="{{ cate.categoria}}"><br>
+          <input type="text" name="estado" required placeholder="Estado" value="{{ cate.estado}}"><br>
+
+          <div class="wrap">
+            <button class="button">ACTUALIZAR</button>
+          </div>
+     
+      </div>
+     
+  </form>
+    
+   
+
+  <script type="text/javascript" src="../static/djapplibreriaEABO/js/no.js"></script>
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+{% endblock cuerpo  %}
+

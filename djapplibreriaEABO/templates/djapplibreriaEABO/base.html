@@ -1,0 +1,78 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo  %}{% endblock titulo  %}</title>
+    <link rel="stylesheet" href="{%static 'djapplibreriaEABO/css/barr.css'%}">
+</head>
+<body>
+
+    <nav class="navbar">
+		<div class="brand-title">LibreriaEABO</div>
+		
+          <br><br><br><br><br>
+
+		
+		<nav class="menuCSS3">
+			<ul>
+				<li><a href="{% url 'index'%}">Inicio</a></li>
+				<li><a href="#">Registrar</a>
+					<ul>
+						<br>
+						<li><a href="">***</a></li>
+						<li><a href="{% url 'frm_libros'%}">Registro Libro</a></li>
+						<li><a href="{% url 'frm_autores'%}">Registro Autor</a></li>
+						<li><a href="{% url 'frm_categorias'%}">Registro Categorias</a></li>
+						<li><a href="{% url 'frm_clientes'%}">Registro Clientes</a></li>
+						<li><a href="{% url 'frm_pedido_cliente'%}">Registro Pedido Cliente</a></li>
+					</ul>
+				</li>
+				
+				<li><a href="#">Listas</a>
+					<ul>
+						<br>
+						<li><a href="">***</a></li>
+						<li><a href="">***</a></li>
+						 <li><a href="{% url 'listado_libros'%}">Lista Libros</a></li> 
+						<li><a href="{% url 'listado_autores'%}">Lista  Autores</a></li>
+						<li><a href="{% url 'listado_categorias'%}">Lista Categorias</a></li>
+						<li><a href="{% url 'listado_cliente'%}">Lista Clientes</a></li>
+						<li><a href="{% url 'listado_pedido_cliente'%}">Lista Pedido Cliente</a></li>
+						<li><a href="{% url 'listado_librosautores'%}">Lista Libro X Autor</a></li>
+
+					
+						
+					</ul>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'logout' %}">{{ user.first_name }} <img class="img" src="{% static 'djapplibreriaEABO/imagenes/salir.jpg'%}" alt="Cerrar Sesión" width="15"></a></li>
+
+					{% else %}
+					<li><a href="{% url 'login' %}"> <img class="img" src="{%static 'djapplibreriaEABO/imagenes/login.jpg'%}"width="15"></a></li>
+					{% endif %}
+				</li>
+			</ul>
+		</nav>
+
+
+       
+
+		
+			
+	</nav>
+
+    
+    {% block cuerpo %}{% endblock cuerpo %}
+
+</body>
+<script>
+    const toggleButton = document.getElementsByClassName('toggle-button')[0]
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+    toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+    })
+</script>
+</html>

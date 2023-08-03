@@ -1,0 +1,36 @@
+
+
+        {% extends 'djapplibreriaEABO/base.html' %}
+        {% block titulo  %}Formulario{% endblock titulo  %}
+        {% block cuerpo  %}
+        {% load static %}
+          <h2>Editar Libros</h2>
+        
+        <form action="updaterecord_libros/{{ libro.isbn  }}" method="post">
+            {% csrf_token%}
+             
+            
+            
+            
+            <br><input type="number" name="isbn"  Required placeholder="isbn" value="{{libro.isbn}}" ><br>
+            <br><input type="text" name="titulo"  Required placeholder="titulo" value="{{libro.titulo}}" ><br>
+            <br><input type="date" name="fecha_publicacion"  Required placeholder="fecha_publicacion" value="{{libro.fecha_publicacion}}" ><br>
+          
+        
+            <br><input type="text" name="precio"  Required placeholder="precio " value="{{libro.precio}}" ><br>
+            <br><input type="file" name="portada"   alue="{{libro.portada}}" ><br>
+            <br><input type="text" name="cantidad_stock"  Required placeholder="cantidad_stock" value="{{libro.cantidad_stock}}" ><br>
+            <br><input type="text" name="estado"  Required placeholder="Estado" value="{{libro.estado}}" ><br>
+            
+            <div class="wrap">
+              <button class="button">ACTUALIZAR</button>
+            </div>
+       
+            
+           
+        
+        <script type="text/javascript" src="../static/djapplibreriaEABO/js/no.js"></script>
+        <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+        <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+        {% endblock cuerpo  %}
+        

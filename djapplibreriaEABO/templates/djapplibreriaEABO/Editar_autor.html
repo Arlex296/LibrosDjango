@@ -1,0 +1,24 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Formulario{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+  <h2>Formulario Autores</h2>
+
+<form action="updaterecord_autores/{{ autor.id_autor }}" method="post">
+    {% csrf_token%}
+     
+   
+    <br><input type="text" name="nombres" id="" Required placeholder="Ingrese nombre"value="{{autor.nombres}}"><br>
+    <br><input type="text" name="apellidos" id="" Required placeholder="Ingrese apellido"value="{{autor.apellidos}}"><br>
+    <br><input type="text" name="estado" id="" Required placeholder="Ingrese estado"value="{{autor.estado}}"><br>
+
+    <div class="wrap">
+      <button class="button">ACTUALIZAR</button>
+    </div>
+
+
+<script type="text/javascript" src="../static/djapplibreriaEABO/js/no.js"></script>
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+{% endblock cuerpo  %}
+

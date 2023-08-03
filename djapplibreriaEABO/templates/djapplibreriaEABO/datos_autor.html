@@ -1,0 +1,46 @@
+
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}listado de  autores{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+<br><br><br><br>
+<h2>Datos Autores</h2>
+
+<br><br>
+
+    <table>
+        <thead>
+          
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+
+
+        </thead>
+        <tbody>
+            {% for autor in autores %}
+            <tr>
+                
+                
+                <td>{{autor.nombres}}</td>
+                <td>{{autor.apellidos}}</td>
+                <td>{{autor.estado}}</td>
+                
+                <td>
+                   
+                    <a href=" {% url 'update_autore' autor.id_autor %} "><img src="{% static 'djapplibreriaEABO/imagenes/editar.png' %}" width="24"></a>
+                    <a href="{% url 'eliminar_autor' autor.id_autor %}"><img src="{% static 'djapplibreriaEABO/imagenes/eliminar.png' %}" width="24"></a>
+                </td>
+                
+                
+               
+            </tr>
+            {% endfor%}
+        </tbody>        
+    </table>  
+    
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+     
+{% endblock cuerpo  %}

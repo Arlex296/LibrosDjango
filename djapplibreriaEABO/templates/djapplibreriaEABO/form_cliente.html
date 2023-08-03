@@ -1,0 +1,34 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+    {% block titulo  %}Formulario{% endblock titulo  %}
+    {% block cuerpo  %}
+    {% load static %}
+    <br><br><br><br>
+      <h2>Formulario Clientes</h2>
+    
+      
+    <form action="{% url 'procesar_cliente' %}" method="POST" enctype="multipart/form-data">
+      
+        {% csrf_token%}
+         
+       
+        <br><input type="number" name="  identificacion" id="" Required placeholder="identificacion"><br>
+        <br><input type="text" name="  nombres" id="" Required placeholder="nombres"><br>
+        <br><input type="text" name="  apellido" id="" Required placeholder="apellido"><br>
+        <br><input type="number" name="  telefono" id="" Required placeholder="telefono"><br>
+        <br><input type="text" name="  direccion" id="" Required placeholder="direccion"><br>
+        <br><input type="mail" name="  correo_electronico" id="" Required placeholder="correo_electronico"><br>
+        <br><input type="text" name="estado" id="" Required placeholder="Estado"><br>
+       
+        <div class="wrap">
+          <button class="button">ENVIAR</button>
+        </div>
+
+
+    </form>
+    
+    
+    
+
+    <script type="text/javascript" src="../static/djapplibreriaEABO//js/prueba.js"></script>
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+    {% endblock cuerpo  %}

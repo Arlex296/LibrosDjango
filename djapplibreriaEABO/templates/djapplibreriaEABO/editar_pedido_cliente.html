@@ -1,0 +1,36 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Formulario{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+  <h2>Editar pedido cliente</h2>
+
+<form action="{% url 'actualizar_Pedido_Cliente2' pedidocliente.id_pedido %}" method="post">
+    {% csrf_token%}
+     
+    
+ 
+    
+      <br><input type="number" name="numero_pedido" id="" Required placeholder="ingrese numero de  pedido"value="{{ pedidocliente.numero_pedido  }}" ><br>
+      <br><input type="date" name="fecha_pedido" id="" Required placeholder="fecha_pedido"value="{{ pedidocliente.fecha_pedido  }}" ><br>
+      <br><input type="number" name="cantidad" id="" Required placeholder="cantidad"value="{{ pedidocliente.cantidad  }}" ><br>
+      <br><input type="number" name="subtotal" id="" Required placeholder="subtotal"value="{{ pedidocliente.subtotal  }}" ><br>
+      <br><input type="text" name="estado" id="" Required placeholder="Estado"value="{{ pedidocliente.estado  }}" ><br>
+    
+
+      
+
+      <div class="wrap">
+        <button class="button">ACTUALIZAR</button>
+      </div>
+ 
+    
+  </form>  
+
+ 
+    
+      
+    
+<script type="text/javascript" src="../static/djapplibreriaEABO/js/no.js"></script>
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+<link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+{% endblock cuerpo  %}

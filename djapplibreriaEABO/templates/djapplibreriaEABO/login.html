@@ -1,0 +1,27 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Mostrar fomularios{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static  %}
+<br><br><br><br>
+<h2> Iniciar sesión</h2>
+<div class="centrar">
+        <form action="{% url 'validar_usuario' %}" method="POST">
+            <h3> Iniciar sesión</h3>
+            <br>
+            {% csrf_token %}
+            
+            <input type="text" name="usuario" required>
+            <input type="password" name="clave" required>
+         
+            <div class="wrap">
+                <button class="button">LOGIN</button>
+              </div>
+      
+        </form>
+</div>  
+ 
+
+
+<link rel="stylesheet" href="{%static 'djapplibreriaEABO/css/formul.css'%}">
+
+    {% endblock cuerpo  %}

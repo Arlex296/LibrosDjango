@@ -1,0 +1,168 @@
+
+.container{
+ width: 100%;
+ justify-content: flex-end;
+ padding: 10px 40px;
+ overflow: hidden;
+}
+.container .swiper-container{
+ width: 100%;
+ height: 100%;
+}
+.container .swiper-slide {
+ position: relative;
+ text-align: center;
+ font-size: 18px;
+ background: #fff;
+ border-radius: 15px;
+ text-align: start;
+ box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+
+}
+.container .swiper-slide img{
+  display: block;
+   width: 100%;
+   height: 400px;
+   object-fit: cover;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+
+}
+.container .swiper-slide .card-description{
+   padding:1rem 1rem;
+}
+.container .swiper-slide .card-title,.container .swiper-slide .card-text{
+  margin-bottom: .5rem;
+}
+.container .swiper-slide .card-link{
+  text-align: center;
+ 
+}
+.container .swiper-slide .card-link a{
+   text-decoration: none;
+   color: #1d6ce2;
+}
+.swiper-button-next{
+   right: 26px !important;
+}
+.swiper-button-prev{
+   left: 26px !important;
+}
+
+
+.titulos{
+  
+   position: relative;
+   bottom: 290px;
+   left: 100px;
+}
+.iniciar{
+   position: relative;
+   bottom: 100px;
+   left: 100px;
+}
+  
+.a{
+  
+   position: relative;
+   bottom: 300px;
+   left: 100px;
+}
+  
+ 
+
+
+
+
+
+h2{
+   color: rgb(245, 222, 46);
+   text-align: center;
+   font-family:  cursive;
+}
+
+body{
+   background-image: url('../imagenes/fondope.jpg');
+   background-size: cover;
+}
+
+form {
+   width:300px;
+	padding:50px;
+	border-radius:10px;
+	margin: auto;
+   margin-top: 100px;
+	background-color:rgba(255, 255, 255, 0.932);
+} 
+
+button{
+   background-color: rgb(6, 51, 134);
+   margin: 16px;
+   width: 90%;
+   border: none ;
+   padding: 12px;
+
+}
+.navbar {
+	display: flex;
+   width: 100%;
+   height: 50px;
+	position: fixed;
+   bottom: 24.5cm;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(26, 226, 126);
+	color: white;
+   z-index: 10;
+}
+
+input{
+
+   width: 90%;
+   background: rgb(48, 112, 230);
+   padding: 10px;
+   border-radius: 4px;
+   margin-bottom: 14px;
+   border: 1px solid #ad2b0b;
+   font-family: 'calibri';
+   font-size: 18px;
+
+}
+select{
+   width: 90%;
+   background: rgb(131, 189, 116);
+   padding: 10px;
+   border-radius: 4px;
+   margin-bottom: 14px;
+   border: 1px solid #ad2b0b;
+   font-family: 'calibri';
+   font-size: 18px;
+}
+
+table{
+   margin: 0 auto;     
+   width: 50%;
+   height: 300px;
+   text-align: left;    
+   background-color: rgb(127, 228, 181);
+   align-items: center;
+   border: 1px solid rgb(230, 45, 45);
+}
+
+th{width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid rgb(228, 18, 18);
+   color: rgb(231, 20, 20);
+}
+
+td {
+   width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+}
+
+.centrar{
+   align-items:center ;
+}

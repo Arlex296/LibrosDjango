@@ -1,0 +1,45 @@
+
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}listado de  categorias{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+<br><br><br>
+<h2>Datos Categorias</h2>
+<br><br>
+
+
+<table>
+        <thead>
+            
+            <th>Categoria</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+
+
+        </thead>
+        <tbody>
+            {% for cate in categorias %}
+            <tr>
+                
+                
+                <td>{{cate.categoria}}</td>
+                <td>{{cate.estado}}</td>
+                  
+                <td>
+                   
+                    <a href=" {% url 'update_categorias' cate.id_categoria %} "><img src="{% static 'djapplibreriaEABO/imagenes/editar.png' %}" width="24"></a>
+                    <a href="{% url 'eliminar_categorias' cate.id_categoria %}"><img src="{% static 'djapplibreriaEABO/imagenes/eliminar.png' %}" width="24"></a>
+                </td>
+                
+              
+                
+                
+               
+            </tr>
+            {% endfor%}
+        </tbody>        
+    </table>  
+
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">  
+{% endblock cuerpo  %}

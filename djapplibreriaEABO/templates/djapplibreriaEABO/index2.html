@@ -1,0 +1,28 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}Mostrar fomularios{% endblock titulo  %}
+{% block cuerpo  %}
+{% load static  %}
+
+
+{% comment %} <div class="titulos">
+    <h2> INICIO</h2>
+    <h2 style="margin-left: 800px; height: 100%; margin-top:15%;"class="btn btn-success" href="{% url 'frm_autores'%}">Formulario Autores</a><br>
+    <a style="margin-left: 800px; height: 100%; margin-top:15%;" class="btn btn-success" href="{% url 'frm_autores'%}">Formulario Autores</a><br>
+    <a style="margin-left: 800px; height: 100%; margin-top:15%;" href="{% url 'frm_categorias'%}">Formulario Categorias</a><br>
+    <a style="margin-left: 800px; height: 100%; margin-top:15%;" href="{% url 'frm_clientes'%}">Formulario Clientes</a><br>
+    <a style="margin-left: 800px; height: 100%; margin-top:15%;" href="{% url 'frm_libros'%}">Formulario Libros</a><br>
+    <a style="margin-left: 800px; height: 100%; margin-top:15%;" href="{% url 'listado_librosautores'%}"> Libros Autores</a><br>
+    <a style="margin-left: 800px; height: 100%; margin-top:15%;" href="{% url 'frm_pedido_cliente'%}"> Pedidos Clientes</a><br>
+    <form action="">
+        <div class="titulos">
+            <h2> SESSION INICIADA</h2>
+            <a href="{% url 'logout' %}">{{ user.first_name }} <img src="{% static 'djapplibreriaEABO/imagenes/salir.jpg'%}" alt="Cerrar Sesión" width="24"></a>
+        </div>    {% endcomment %}
+
+<link rel="stylesheet" href="{%static 'djapplibreriaEABO/css/style.css'%}">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'djapplibreriaEABO/js/carrusel.js' %}"></script>
+
+
+    {% endblock cuerpo  %}

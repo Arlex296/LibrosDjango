@@ -1,0 +1,32 @@
+
+  {% extends 'djapplibreriaEABO/base.html' %}
+    {% block titulo  %}Formulario{% endblock titulo  %}
+    {% block cuerpo  %}
+    {% load static %}
+
+    <br><br><br><br>
+      <h2>Formulario Autores</h2>
+    
+      
+    <form action="{% url 'procesar_autor' %}" method="POST" enctype="multipart/form-data">
+      
+        {% csrf_token%}
+         
+        
+        <br><input type="text" name=" nombres" id="" Required placeholder="ingrese nombre"><br>
+        <br><input type="text" name="apellidos" id="" Required placeholder="ingrese apellido"><br>
+        <br><input type="text" name="estado" id="" Required placeholder="Estado"><br>
+       
+       
+        
+        <div class="wrap">
+          <button class="button">ENVIAR</button>
+        </div>
+
+
+    </form>
+    
+
+    <script type="text/javascript" src="../static/djapplibreriaEABO//js/prueba.js"></script>
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}">
+    {% endblock cuerpo  %}

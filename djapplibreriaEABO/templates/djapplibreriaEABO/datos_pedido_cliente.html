@@ -1,0 +1,50 @@
+{% extends 'djapplibreriaEABO/base.html' %}
+{% block titulo  %}listado de  pedidos clientes {% endblock titulo  %}
+{% block cuerpo  %}
+{% load static %}
+<br><br><br><br>
+<h2>Datos Pedidos Clientes</h2>
+
+<br><br>
+
+<table>
+        <thead>
+            
+            <th>Numero de Pedido</th>
+            <th>Id cliente</th>
+            <th>libro</th>
+            <th>Fecha Pedido</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            
+
+
+        </thead>
+        <tbody>
+            {% for pedidocliente in pedidosclientes %}
+            <tr>
+                
+                <td>{{pedidocliente.numero_pedido}}</td>
+                <td>{{pedidocliente.id_cliente.nombres}}</td>
+                <td>{{pedidocliente.isbn.titulo}}</td>
+                <td>{{pedidocliente.fecha_pedido}}</td>
+                <td>{{pedidocliente.cantidad}}</td>
+                <td>{{pedidocliente.subtotal}}</td>
+                <td>{{pedidocliente.estado}}</td>
+                
+                <td>
+                    
+                    <a href="{% url 'actualizar_Pedido_Cliente' pedidocliente.id_pedido %} "><img src="{% static 'djapplibreriaEABO/imagenes/editar.png' %}" width="24"></a>
+                    <a href="{% url 'eliminar_Pedido_Cliente' pedidocliente.id_pedido %}"><img src="{% static 'djapplibreriaEABO/imagenes/eliminar.png' %}" width="24"></a>
+                </td>
+
+            </tr>
+            {% endfor%}
+        </tbody>        
+    </table>  
+
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO/css/frm_libros'%}">
+    <link rel="stylesheet" href="{% static 'djapplibreriaEABO//css/formul.css'%}"> 
+{% endblock cuerpo  %}
